@@ -52,18 +52,38 @@
         // Todo 2.3 Create another list item, and add it as a child of the unordered list
         //          Set the text of the list item to your favorite subject
         // Resource: https://www.javascripttutorial.net/dom/manipulating/create-a-dom-element/
+        let newLi = document.createElement('li');
+        newLi.innerText = "CS107L - Web Systems and Technologies Lab";
+
+        let unLi = document.getElementById("subjects-taken")
+        unLi.appendChild(newLi);
+        // console.log(document.getElementById("subjects-taken").children);
+
 
         // Todo 2.4 Set the id attribute of the list item you created to "favorite-subject".
         //          Set the class of the list item to "newly-created"
+        // console.log(unLi.lastElementChild.innerText); //checking if last element is the new li
+        newLi.id = "favorite-subject";
+        newLi.class = "newly-created";
+
+        console.log(unLi.lastElementChild.innerText+", "+unLi.lastElementChild.id+", "+unLi.lastElementChild.class);
 
         // Todo 2.5 Delete the third list item in the unordered list
+        // console.log(unLi.children);
+
+        unLi.firstElementChild.nextElementSibling.nextElementSibling.remove();
+
+        // console.log(unLi.children);
 
         // Checkpoint 2.3 What is the difference between node and element?
-        // Answer:
+        // Answer: Nodes not only include the elements marked with HTML tags but also the text within them, comments, and whitespace.
+        // Elements include what are usually thought of as "elements" within HTML, that being things initialized with tags.
 
         // Bonus Todo 2.6 Select the parent of the unordered list.
+        console.log(unLi.parentElement);
 
         // Bonus Todo 2.7 Select the previous sibling of the list item you previously created
+        console.log(newLi.previousElementSibling);
     </script>
 </body>
 
