@@ -18,12 +18,57 @@
             // Answer: 
 
             // Todo 4.1 Fetch the list of users. Outout the first and second page of users.
+            fetch('https://reqres.in/api/users?page=1')
+                .then(res => res.json())
+                .then(data => console.log(data))
+            fetch('https://reqres.in/api/users?page=2')
+                .then(res => res.json())
+                .then(data => console.log(data))
+
+            // fetch('https://reqres.in/api/users?page=1')
+            //     .then(res => res.json())
+            //     .then(data => {
+            //         console.log(data)
+            //         return fetch('https://reqres.in/api/users?page=2')
+            //     })
+            //     .then(res => res.json())
+            //     .then(data => console.log(data))
 
             // Todo 4.2 Fetch the information about a single user. Display their information
+            fetch('https://reqres.in/api/users/3')
+                .then(res => res.json())
+                .then(data => console.log(data))
+                    .catch(error => console.log('ERROR'))
 
             // Todo 4.3 Create a user
+            fetch('https://reqres.in/api/users/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    first_name: 'Sample',
+                    last_name: 'Man'
+                })
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+                    .catch(error => console.log('ERROR'))
 
             // Todo 4.4 Update the information of the user that you have created
+            fetch('https://reqres.in/api/users/', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    first_name: 'Sample',
+                    last_name: 'Man'
+                })
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+                    .catch(error => console.log('ERROR'))
 
             // Todo 4.5 Delete the user that you have created
 
