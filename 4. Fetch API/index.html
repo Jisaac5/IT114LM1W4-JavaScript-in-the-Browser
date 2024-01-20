@@ -97,7 +97,9 @@
                     .catch(error => console.log('ERROR entry deleted'))
 
             // Checkpoint 4.2 What is the difference between callbacks, then-catch vs await-try-catch? When should you use one over the other
-            // Answer: 
+            // Answer: then-catch lets code past the promise run while the async function is processing, while await-try-catch makes the program wait for
+            // a response before proceeding with the rest of the code. then-catch should be used if the async function's action is something you're fine
+            // with letting process in the background, and await-try-catch is for processes that you need to use for the statements after it.
         }
         start()
 
