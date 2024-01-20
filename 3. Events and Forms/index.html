@@ -43,6 +43,12 @@
 <button id="addEvBtn">Call addEventListener</button>
 
 <!-- Todo 3.4a Create a form that accepts the first name and last name of the user -->
+<form>
+    <input type="text" name="firstName" id="firstName">
+    <input type="text" name="lastName" id="lastName">
+    <button id="submit-btn">Submti</button>
+</form>
+
 
 <div>
     <h4>Todo 3.5</h4>
@@ -75,10 +81,12 @@
         });
 
         // Checkpoint 3.1 What is the difference between inline event handlers and addEventListener? When should you use one over the other?
-        // Answer: 
+        // Answer: Inline event handlers have to be added as an element's tags, while addEventListeners are completely separate.
+        // Inline event handlers may be preferred when only one or two events are to be added, but once there are many events
+        // inline event handlers could make the element's tags hard to read, in which case addEventListener could be the better choice for readability.
 
         const results = []
-        // Todo 3.3b When the user presses the submit form button, append the contents of the form to results.
+        // Todo 3.4b When the user presses the submit form button, append the contents of the form to results.
         //          Then, display the content of results
         // Resource: https://stackoverflow.com/questions/11563638/how-do-i-get-the-value-of-text-input-field-using-javascript
         
