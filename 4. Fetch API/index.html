@@ -48,7 +48,7 @@
                 },
                 body: JSON.stringify({
                     first_name: 'Sample',
-                    last_name: 'Man'
+                    last_name: 'Boy'
                 })
             })
                 .then(res => res.json())
@@ -71,6 +71,19 @@
                     .catch(error => console.log('ERROR'))
 
             // Todo 4.5 Delete the user that you have created
+            fetch('https://reqres.in/api/users/', {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    first_name: 'Sample',
+                    last_name: 'Man'
+                })
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
+                    .catch(error => console.log('ERROR entry deleted'))
 
             // Checkpoint 4.2 What is the difference between callbacks, then-catch vs await-try-catch? When should you use one over the other
             // Answer: 
