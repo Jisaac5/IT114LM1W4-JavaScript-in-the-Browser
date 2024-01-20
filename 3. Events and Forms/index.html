@@ -50,7 +50,7 @@
 </form>
 
 <script>
-    const results = {}
+    const results = []
     const firstNameInput = document.getElementById("firstName")
     const lastNameInput = document.getElementById("lastName")
     // Todo 3.4b When the user presses the submit form button, append the contents of the form to results.
@@ -64,6 +64,13 @@
             lastName: lastNameInput.value,
         })
         // post to server
+
+        results.push({
+            firstName: firstNameInput.value,
+            lastName: lastNameInput.value,
+        });
+
+        console.log(results);
     })
 </script>
 
@@ -111,25 +118,49 @@
         const parent = document.querySelector(".parent")
         const child = document.querySelector(".child")
         
+        // grandparent.addEventListener("click", (e) => {
+        //     console.log("Grandparent");
+        // });
+
+        // parent.addEventListener("click", (e) => {
+        //     console.log("Parent");
+        // });
+
+        // child.addEventListener("click", (e) => {
+        //     console.log("Child");
+        // });
+
+        // Checkpoint 3.2 What is event bubbling? How was it shown in Todo 3.5?
+        // Answer: Event bubbling is when the conditions for events overlap. It's shown in Todo 3.5 by the divs' overlapping causing
+        // their respective click events to happen at the same time, starting from the child working its way up the parents.
+
+        // Bonus Todo 3.6 Change your code in the previous todo such that "grandparent" is displayed first
+        // grandparent.addEventListener("click", (e) => {
+        //     console.log("Grandparent");
+        // }, true);
+
+        // parent.addEventListener("click", (e) => {
+        //     console.log("Parent");
+        // }, true);
+
+        // child.addEventListener("click", (e) => {
+        //     console.log("Child");
+        // }, true);
+
+        // Bonus Todo 3.7 Change your code in the previous todo such that "parent" is never displayed
         grandparent.addEventListener("click", (e) => {
             console.log("Grandparent");
         });
 
         parent.addEventListener("click", (e) => {
-            console.log("Parent");
+            if (!e.target.classList.contains("child")){
+                console.log("Parent");
+            }
         });
 
         child.addEventListener("click", (e) => {
             console.log("Child");
         });
-
-        // Checkpoint 3.2 What is event bubbling? How was it shown in Todo 3.5?
-        // Answer: Event bubbling is when the conditions for events overlap. It's shown in Todo 3.5 by the divs' overlapping causing
-        // their respective click events to happen at the same time, starting from the child working its way up the parents.
-        
-        // Bonus Todo 3.6 Change your code in the previous todo such that "grandparent" is displayed first
-
-        // Bonus Todo 3.7 Change your code in the previous todo such that "parent" is never displayed
 
     </script>
 </body>
